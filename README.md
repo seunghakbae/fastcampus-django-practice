@@ -1,0 +1,1 @@
+# fastcampus-django-practice
