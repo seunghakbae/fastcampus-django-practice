@@ -6,5 +6,7 @@ from . import views
 # aaaa.com/admin/~~~/~~~ <= 장고의 admin을 관리.
 
 urlpatterns = [
-    path('list/', views.board_list)
+    path('detail/<int:pk>/', views.board_detail),
+    path('list/', views.board_list),
+    path('write/', views.board_write)
 ]
