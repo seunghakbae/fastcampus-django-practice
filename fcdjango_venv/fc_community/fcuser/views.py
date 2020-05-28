@@ -21,7 +21,18 @@ def logout(request):
 
 # Create your views here.
 def login(request):
-    form = LoginForm()
+
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+
+        if form.is_valid():
+            request.session['user'] = form.user_id
+
+            # session
+            return redirect('/')
+
+    else:
+        form = LoginForm()
 
     return render(request, 'login.html', {'form' : form})
     
